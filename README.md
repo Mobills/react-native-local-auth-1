@@ -21,7 +21,7 @@ If TouchID is not supported or not enrolled, you can fallback to device passcode
 
 ## Install
 ```shell
-npm i --save react-native-local-auth
+yarn add https://github.com/pedrosobral/react-native-local-auth.git
 ```
 
 ### Linking the Library
