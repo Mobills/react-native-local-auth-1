@@ -58,7 +58,12 @@ public class LocalAuthModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void isDeviceSecure(final Promise promise) {
-    promise.resolve(mKeyguardManager.isDeviceSecure());
+    if (mKeyguardManager != null) {
+      promise.resolve(mKeyguardManager.isKeyguardSecure());
+      return;
+    }
+    System.err.println("Unable to determine keyguard status. KeyguardManager was null");
+    promise.resolve(false);
   }
 
   @ReactMethod
